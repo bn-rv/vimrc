@@ -24,6 +24,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug '907th/vim-auto-save'
 call plug#end()
 
 " Настройки NerdTree
@@ -44,3 +46,5 @@ colo seoul256
 " настройки Vim-Airline
 set laststatus=2
 let g:airline_theme='badwolf'
+" настройка vim-auto-save
+let g:auto_save = 1
