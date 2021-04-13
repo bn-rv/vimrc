@@ -1,6 +1,20 @@
 " настройки поиска
 set ic
 set hls is
+
+" настройки вкладок
+set showtabline=2
+map <F8> :tabnext<CR>
+map <F7> :tabprev<CR>
+map <F6> :tabnew<CR>
+map <F5>  :tabclose<CR>
+
+" настройка буфферов
+map <F12> :bnext<CR>
+map <F11> :bprev<CR>
+" Require MiniBufExplorer
+map <F9>  :MBEbw<CR>
+
 " настройки табуляции и отступов
 set tabstop=4
 set shiftwidth=4
@@ -27,11 +41,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug '907th/vim-auto-save'
 Plug 'chun-yang/auto-pairs'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Настройки NerdTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree | wincmd p
@@ -48,8 +64,7 @@ colo seoul256
 set laststatus=2
 let g:airline_theme='badwolf'
 " настройка vim-auto-save
-let g:auto_save = 1
-" настройки pymode
+let g:auto_save = 1 " настройки pymode
 let g:pymode = 1
 let g:pymode_warnings = 1
 let g:pymode_paths = []
@@ -165,4 +180,13 @@ let g:pymode_syntax_builtin_types = g:pymode_syntax_all
 let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
 let g:pymode_syntax_docstrings = g:pymode_syntax_all
 " настройки autoclose
+
+" MiniBufExplorer settings
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+" GRB: use fancy buffer closing that doesn't close the split
+cnoremap <expr> bd (getcmdtype() == ':' ? 'Bclose' : 'bd')
 
