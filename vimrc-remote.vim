@@ -43,6 +43,7 @@ Plug '907th/vim-auto-save'
 Plug 'chun-yang/auto-pairs'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'mattn/emmet-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Настройки NerdTree
@@ -190,3 +191,5 @@ let g:miniBufExplModSelTarget = 1
 " GRB: use fancy buffer closing that doesn't close the split
 cnoremap <expr> bd (getcmdtype() == ':' ? 'Bclose' : 'bd')
 
+" Set colorscheme
+colorscheme nord
